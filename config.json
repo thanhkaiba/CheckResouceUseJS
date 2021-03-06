@@ -1,0 +1,19 @@
+{
+  "resPath": {
+    "resImg": "E:\\GitHub\\1000\\src\\resources\\ResourceImage.js",
+    "resFont": "E:\\GitHub\\1000\\src\\resources\\ResourceFont.js",
+    "resPlist": "E:\\GitHub\\1000\\src\\resources\\ResourcePlist.js",
+    "resShader": "E:\\GitHub\\1000\\src\\resources\\ResourceShader.js",
+    "resSoundMusic": "E:\\GitHub\\1000\\src\\resources\\ResourceSoundMusic.js"
+  },
+
+  "build_config": "E:\\GitHub\\1000\\src\\config\\BuildConfig.js",
+  "searchPath": {
+    "res": {
+      "path": "E:\\GitHub\\1000\\",
+      "output": "C:\\backups"
+    }
+
+  }
+
+}
