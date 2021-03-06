@@ -7,6 +7,7 @@ Install
 #How To Use
 
 In Command line tool:
-`readJs [Folder | CSD file]`
+1. Edit `config.json` file
+2.`readJs [Folder | CSD file]`
 
 Feel free to contribute to the this project :D
