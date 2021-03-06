@@ -1,4 +1,4 @@
-# ReadCSD
+# ReadJS
 Install
 1. clone this repo 
 2. run npm install
@@ -6,4 +6,4 @@ Install
 
 #How To Use
 
-readCsd [Folder | CSD file]
+readJs [Folder | CSD file]
