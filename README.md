@@ -9,6 +9,6 @@ Install
 In Command line tool:
 1. Edit `config.json` file
 2. Open CMD
-3.`readJs [Folder | CSD file]`
+3. `readJs [Folder | CSD file]`
 
 Feel free to contribute to the this project :D
