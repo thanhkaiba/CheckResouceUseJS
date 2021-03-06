@@ -7,3 +7,5 @@ Install
 #How To Use
 
 readJs [Folder | CSD file]
+
+Feel free to contribute to the this project :D
