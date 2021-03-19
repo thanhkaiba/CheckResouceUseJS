@@ -68,7 +68,6 @@ function loadResMap(resPath, BuildConfig) {
                 let jsonString = someText.match(regex)[1];
                 eval("res_map['" + key + "'] =" + jsonString);
 
-                console.log('Load config: ' + key + ' DONE');
                 if (Object.keys(resPath).indexOf(key) === Object.keys(resPath).length - 1) {
                     eventEmitter.emit('load-config-done', filePath);
                 }
@@ -86,7 +85,6 @@ if (!path.isAbsolute(filePath)) {
 
 
 function resolve(filePath) {
-    console.log('start->>>>>>>');
     if (!is_dir(filePath)) {
         readJs(filePath);
     } else {
@@ -125,9 +123,10 @@ const output = new Set();
 /**
  *
  * @param filePath
+ * @param detail
  * @returns {{finalPath: string, des_path: any}|null}
  */
-function resolvePath(filePath) {
+function resolvePath(filePath, detail) {
     filePath = convertPath(filePath);
     let finalPath;
     finalPath = undefined;
@@ -142,7 +141,7 @@ function resolvePath(filePath) {
     if (finalPath != null) {
         return {finalPath: finalPath, des_path: des_path};
     } else {
-        console.log("Find resource but can't find path " + filePath);
+        console.error("Find resource but can't find path " + filePath, 'in line: ', detail);
         return null;
     }
 
@@ -158,12 +157,11 @@ function readJs(filePath) {
                 return
             }
 
-            console.log('check regular image');
             const someText = data.replace(/(\r\n|\n|\r)/gm, "");
             const regex = /"([\w\/]+\.\w+)"/g;
             let matches;
             while (matches = regex.exec(someText)) {
-                const path = resolvePath(matches[1]);
+                const path = resolvePath(matches[1], matches[0]);
 
                 if (path != null && !output.has(path)) {
                     output.add(path);
@@ -173,11 +171,10 @@ function readJs(filePath) {
 
 
             for (let resMapKey in res_map) {
-                console.log('check ' + resMapKey);
                 const resRegex = new RegExp(resMapKey + '\\n*?\\r*?.(\\w+)', 'gm')
                 while (matches = resRegex.exec(someText)) {
 
-                    const path = resolvePath((res_map[resMapKey][matches[1]]));
+                    const path = resolvePath((res_map[resMapKey][matches[1]]), matches[0]);
 
                     if (path != null && !output.has(path)) {
                         output.add(path);
