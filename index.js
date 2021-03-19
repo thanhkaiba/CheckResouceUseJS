@@ -35,8 +35,11 @@ function readConfig() {
                 console.error(err);
                 return;
             }
-            eval(someText.replace('\'use strict\';', '').replace("\"use strict\";", '').replace(/cc\.log/g, 'console.log'));
-
+            eval(someText
+                .replace('\'use strict\';', '')
+                .replace("\"use strict\";", '')
+                .replace(/(const|let)\s+BuildConfig/g, 'var BuildConfig')
+                .replace(/cc\.log/g, 'console.log'));
 
             loadResMap(config.resPath, BuildConfig);
 
