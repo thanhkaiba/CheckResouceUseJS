@@ -7,6 +7,17 @@ eventEmitter.on('load-config-done', (filePath) => {
     resolve(filePath);
 })
 
+console.log("\n" +
+    "/***\n" +
+    " *     _    _        _  _            \n" +
+    " *    | |  / )      (_)| |           \n" +
+    " *    | | / /  ____  _ | | _    ____ \n" +
+    " *    | |< <  / _  || || || \\  / _  |\n" +
+    " *    | | \\ \\( ( | || || |_) )( ( | |\n" +
+    " *    |_|  \\_)\\_||_||_||____/  \\_||_|\n" +
+    " *                                   \n" +
+    " */\n")
+
 
 const EXT_NAME = '.js';
 const copiedMap = {};
