@@ -23,6 +23,7 @@ const EXT_NAME = '.js';
 const copiedMap = {};
 const folder_map = {};
 let search_path = {};
+let overrideResVariable = false;
 const args = process.argv.slice(2);
 
 let filePath = args[0];
@@ -34,10 +35,11 @@ function readConfig() {
     let rawData = fs.readFileSync(path.join(__dirname, './config.json'));
     /**
      *
-     * @type {{resPath: string, build_config: string, searchPath: Object}}
+     * @type {{resPath: string, build_config: string, searchPath: Object, overrideResVariable: boolean}}
      */
     let config = JSON.parse('' + rawData);
     search_path = config.searchPath;
+    overrideResVariable = config.overrideResVariable;
     //load build config
     if (config.build_config != null) {
         fs.readFile(config.build_config, 'utf8', (err, someText) => {
@@ -161,6 +163,7 @@ function resolvePath(filePath, detail) {
 
 function readJs(filePath) {
     const ext = path.extname(filePath);
+
     if (ext === EXT_NAME) {
         fs.readFile(filePath, 'utf8', (err, data) => {
             if (err) {
@@ -169,36 +172,56 @@ function readJs(filePath) {
             }
 
             const someText = data.replace(/(\r\n|\n|\r)/gm, "");
-            const regex = /"([\w\/]+\.\w+)"/g;
+            const regex = /"([\w\/\\]+\.\w+)"/g;
             let matches;
             while (matches = regex.exec(someText)) {
                 const path = resolvePath(matches[1], matches[0]);
-
                 if (path != null && !output.has(path)) {
                     output.add(path);
                     copyFile(path.finalPath, path.des_path);
                 }
             }
 
-
             for (let resMapKey in res_map) {
                 const resRegex = new RegExp(resMapKey + '\\n*?\\r*?.(\\w+)', 'gm')
                 while (matches = resRegex.exec(someText)) {
-
+                    if (overrideResVariable && matches[1] != null && res_map[resMapKey][matches[1]] != null && data != null) {
+                        //instead of use variable just use string bcz some project not use res variable
+                        data = data.replace(resMapKey + '.' + matches[1], '"' + res_map[resMapKey][matches[1]] + '"');
+                    }
                     const path = resolvePath((res_map[resMapKey][matches[1]]), matches[0]);
-
                     if (path != null && !output.has(path)) {
                         output.add(path);
                         copyFile(path.finalPath, path.des_path);
                     }
                 }
             }
-        })
 
+            if (overrideResVariable) {
+                writeJSFile(filePath, data);
+            }
+        })
 
     } else {
         console.error('File extension not support', ext);
     }
+}
+
+function writeJSFile(filePath, data) {
+    let array = filePath.split(path.sep);
+    const index = array.indexOf('src');
+    array = array.slice(index);
+
+    const pathFromSrc = ['C:\\backups'].concat(array).join(path.sep);
+
+    try {
+        ensureDirectoryExistence(pathFromSrc);
+        fs.writeFileSync(pathFromSrc, data);
+        console.log('file written successfully', pathFromSrc);
+    } catch (err) {
+        console.error(err)
+    }
+
 }
 
 

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a65dd6a-d37d-4bda-b82f-2a4e3b35437d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +23,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1ppNoLfQBP89bNRVrnTYnIfERIY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -27,13 +39,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.18.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.20.4" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.16.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.37" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -67,6 +80,10 @@
       <workItem from="1615876247806" duration="7862000" />
       <workItem from="1615884269432" duration="3001000" />
       <workItem from="1616126903087" duration="2927000" />
+      <workItem from="1618383374146" duration="2229000" />
+      <workItem from="1618394551462" duration="1696000" />
+      <workItem from="1618457093888" duration="1835000" />
+      <workItem from="1618830014192" duration="25000" />
     </task>
     <servers />
   </component>
@@ -84,23 +101,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1837" height="227" key="GridCell.Tab.0.bottom" timestamp="1616135035028">
-      <screen x="0" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1837" height="227" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1616135035028" />
-    <state width="1837" height="227" key="GridCell.Tab.0.center" timestamp="1616135035028">
-      <screen x="0" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1837" height="227" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1616135035028" />
-    <state width="1837" height="227" key="GridCell.Tab.0.left" timestamp="1616135035028">
-      <screen x="0" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1837" height="227" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1616135035028" />
-    <state width="1837" height="227" key="GridCell.Tab.0.right" timestamp="1616135035028">
-      <screen x="0" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1837" height="227" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1616135035028" />
   </component>
 </project>
